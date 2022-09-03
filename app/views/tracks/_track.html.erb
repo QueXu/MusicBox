@@ -1,0 +1,16 @@
+<div id="<%= dom_id track %>">
+  <p>
+    <strong>Song:</strong>
+    <%= track.song %>
+  </p>
+
+  <p>
+    <strong>Artist:</strong>
+    <%= track.artist %>
+  </p>
+
+  <%= image_tag(track.image, class: "message-image") %>
+
+  <%= audio_tag(url_for(track.audio), class: "message-audio", controls: "") %>
+
+</div>
