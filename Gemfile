@@ -72,3 +72,5 @@ group :test do
 end
 
 gem 'pry', '~> 0.13.1'
+
+gem 'activestorage-validator'

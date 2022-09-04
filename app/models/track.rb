@@ -6,6 +6,10 @@ class Track < ApplicationRecord
 
     has_one_attached :image, dependent: :destroy
 
+    validates :audio, blob: { content_type: :audio }
+
+    validates :image, blob: { content_type: :image }
+
     validates_presence_of :song, on: :create, message: "can't be blank"
 
     validates_presence_of :artist, on: :create, message: "can't be blank"
