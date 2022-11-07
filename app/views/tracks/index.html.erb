@@ -1,15 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tracks</h1>
-
-<div id="tracks">
+<div id="tracks" style="padding:50px">
   <% @tracks.each do |track| %>
     <%= render track %>
     <p>
-      <%= link_to "Show this track", track %>
+      <%= link_to "Show this track", track, class: "button is-dark  button is-small"%>
     </p>
-    <hr>
+    <br>
+    <div style="height: 2px; background-color: #CECECE"></div>
   <% end %>
 </div>
-
-<%= link_to "New track", new_track_path %>
+ 

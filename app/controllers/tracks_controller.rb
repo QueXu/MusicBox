@@ -49,11 +49,17 @@ class TracksController < ApplicationController
 
   # DELETE /tracks/1 or /tracks/1.json
   def destroy
-    @track.destroy
-
-    respond_to do |format|
-      format.html { redirect_to tracks_url, notice: "Track was successfully destroyed." }
-      format.json { head :no_content }
+    if @track.user == current_user
+      @track.destroy
+      respond_to do |format|
+        format.html { redirect_to tracks_url, notice: "Track was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to tracks_url, notice: "This is not your track" }
+        format.json { head :no_content }
+      end
     end
   end
 

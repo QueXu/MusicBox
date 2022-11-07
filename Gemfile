@@ -74,3 +74,5 @@ end
 gem 'pry', '~> 0.13.1'
 
 gem 'activestorage-validator'
+
+gem "cssbundling-rails", "~> 1.1"

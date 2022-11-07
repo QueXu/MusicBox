@@ -1,20 +1,22 @@
 <div id="<%= dom_id track %>">
-  <p>
-    <strong>Song:</strong>
-    <%= track.song %>
-  </p>
 
-  <p>
-    <strong>Artist:</strong>
-    <%= track.artist %>
-  </p>
+  <div class="flex-container">
+  
+    <div>
+      <%= image_tag(track.image, class: "message-image", height: 100, width: 100) %>
+    </div>
 
-  <%= image_tag(track.image, class: "message-image") %>
-
-  <%= audio_tag(url_for(track.audio), class: "message-audio", controls: "") %>
-
-  <p>
-  <%= track.user.name %>
-  </p>
-
+    <div class="column-container">
+      <div>
+        <strong><%= track.song %></strong>
+      </div>
+      <div>
+        <%= track.artist %>
+      </div>
+    
+      <div>
+        <%= audio_tag(url_for(track.audio), class: "message-audio", controls: "") %>
+      </div>
+    </div>
+  </div>
 </div>
